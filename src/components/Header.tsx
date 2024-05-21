@@ -1,12 +1,20 @@
 "use client";
 
 import { HeaderPropTypes, NavType } from "@/types";
+import {
+  useScroll,
+  motion,
+  useSpring,
+  useMotionValueEvent,
+} from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function Header(props: HeaderPropTypes) {
+  const targetRef = useRef(null);
   const pathname = usePathname();
+  const [showHeader, setShowHeader] = useState(false);
 
   const renderNavComponent = useMemo(
     () =>
@@ -24,10 +32,48 @@ export default function Header(props: HeaderPropTypes) {
     [props.navItems, pathname],
   );
 
+  const { scrollY } = useScroll({});
+
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
+    if (latest > 100) {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+  });
+
+  useEffect(() => {
+    if (pathname === "/contact") {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+  }, [pathname]);
+
+  const headerVariants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
   return (
-    <header>
-      <h1 className="text-3xl font-bold mb-3">ben.dev</h1>
-      <nav className="flex border-b mb-3 pb-3">{renderNavComponent}</nav>
-    </header>
+    <>
+      <motion.header
+        initial={{ opacity: 0 }}
+        variants={headerVariants}
+        animate={showHeader ? "visible" : "hidden"}
+        transition={{
+          ease: [0.1, 0.25, 0.3, 1],
+          duration: 0.6,
+          staggerChildren: 0.05,
+        }}
+        className="fixed z-10 w-screen bg-white border-b mb-3"
+      >
+        <div className="lg:w-[80vw] mx-auto mt-10">
+          <h1 className="text-3xl font-bold mb-3">ben.dev</h1>
+          <nav className="flex pb-3">{renderNavComponent}</nav>
+        </div>
+      </motion.header>
+      <div ref={targetRef} className="absolute top-[100%]" />
+    </>
   );
 }

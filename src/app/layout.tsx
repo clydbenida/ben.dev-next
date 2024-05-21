@@ -26,8 +26,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex min-h-screen flex-col justify-between lg:px-24 py-12 md:w-[70vw] w-auto px-10 mx-auto">
-          <Header navItems={navItems} />
+        <Header navItems={navItems} />
+        <main className="flex min-h-screen flex-col justify-between lg:px-24 md:w-[70vw] w-auto px-10 mx-auto">
           <main className="flex-1 flex-basis">{children}</main>
         </main>
       </body>
