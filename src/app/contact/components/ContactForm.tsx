@@ -5,13 +5,13 @@ import { sendMail } from "../actions";
 import { ContactFormProps } from "@/types";
 
 export default function ContactForm({ canSendMail }: ContactFormProps) {
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     if (canSendMail) {
       e.preventDefault();
       if (e === undefined) {
         return;
       }
-      const formData = new FormData(e?.target);
+      const formData = new FormData(e?.currentTarget);
 
       formData.append("access_key", "d3e97c84-8887-439c-80b7-b7f9a6ad96ed");
 
