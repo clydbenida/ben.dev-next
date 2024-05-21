@@ -1,15 +1,29 @@
 import { contentfulClient } from "@/contentful";
+import Image from "next/image";
 
 export default async function Home() {
   return (
-    <div className="mt-10">
-      <h1 className="text-3xl font-bold mb-4">Hi, I&apos;m Ben 👋</h1>
-      <h3 className="text-xl font-semibold">Welcome to my humble abode!</h3>
-      <p>
-        I am a motivated web developer based in the Philippines 🇵🇭. Currently I
-        am working as a Jr. Fullstack developer using MERN Stack{" "}
-        <strong>(MySql, Express.js, React.js, and Node.js)</strong>.
-      </p>
+    <div className="mt-5">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row">
+          <Image
+            src="/headshot-3.jpeg"
+            width={500}
+            height={800}
+            className="max-w-sm rounded-lg shadow-2xl lg:mr-10"
+            alt="Headshot"
+          />
+          <div>
+            <h1 className="text-5xl font-bold">Hi I'm Ben 👋</h1>
+            <p className="py-6">
+              I am a motivated web developer based in the Philippines 🇵🇭.
+              Currently I am working as a Jr. Fullstack developer using MERN
+              Stack <strong>(MySql, Express.js, React.js, and Node.js)</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <p>
         Currently, I’m exploring some technologies used for web development. My
         main tool for frontend development is React.js.

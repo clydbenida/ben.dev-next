@@ -7,3 +7,7 @@ export interface NavType {
 export interface HeaderPropTypes {
   navItems: NavType[];
 }
+
+export interface ContactFormProps {
+  canSendMail: boolean;
+}
