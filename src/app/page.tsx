@@ -9,11 +9,11 @@ export default async function Home() {
             src="/headshot-3.jpeg"
             width={500}
             height={800}
-            className="max-w-sm rounded-lg shadow-2xl lg:mr-10"
+            className="rounded-lg shadow-2xl lg:mr-10"
             alt="Headshot"
           />
           <div>
-            <h1 className="text-5xl font-bold">Hi I'm Ben 👋</h1>
+            <h1 className="text-5xl font-bold">Hi, I'm Ben 👋</h1>
             <p className="py-6">
               I am a motivated web developer based in the Philippines 🇵🇭.
               Currently I am working as a Jr. Fullstack developer using MERN

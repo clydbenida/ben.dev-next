@@ -9,3 +9,7 @@ p {
 a {
     color: #08589f;
 }
+
+.footer-links .link {
+    margin-right: 1rem;
+}

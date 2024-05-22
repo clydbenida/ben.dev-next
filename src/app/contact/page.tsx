@@ -6,8 +6,8 @@ export default function ContactPage() {
 
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:ml-14 lg:text-left">
+      <div className="hero-content flex-col p-0 lg:flex-row-reverse">
+        <div className="text-center lg:ml-14 lg:text-left pt-36">
           <h1 className="text-5xl font-bold">Want to reach me out?</h1>
           <p className="py-6">
             Feel free to reach me out if you have an amazing job opportunity for

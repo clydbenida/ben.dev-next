@@ -1,15 +1,10 @@
 "use client";
 
-import { HeaderPropTypes, NavType } from "@/types";
-import {
-  useScroll,
-  motion,
-  useSpring,
-  useMotionValueEvent,
-} from "framer-motion";
+import { HeaderPropTypes } from "@/types";
+import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 export default function Header(props: HeaderPropTypes) {
   const targetRef = useRef(null);
@@ -42,14 +37,6 @@ export default function Header(props: HeaderPropTypes) {
     }
   });
 
-  useEffect(() => {
-    if (pathname === "/contact") {
-      setShowHeader(true);
-    } else {
-      setShowHeader(false);
-    }
-  }, [pathname]);
-
   const headerVariants = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -100 },
@@ -58,7 +45,7 @@ export default function Header(props: HeaderPropTypes) {
   return (
     <>
       <motion.header
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, x: -100 }}
         variants={headerVariants}
         animate={showHeader ? "visible" : "hidden"}
         transition={{
@@ -66,9 +53,9 @@ export default function Header(props: HeaderPropTypes) {
           duration: 0.6,
           staggerChildren: 0.05,
         }}
-        className="fixed z-10 w-screen bg-white border-b mb-3"
+        className="fixed z-10 w-[100%] bg-white border-b mb-3"
       >
-        <div className="lg:w-[80vw] mx-auto mt-10">
+        <div className="w-screen lg:w-[80vw] mx-auto mt-10">
           <h1 className="text-3xl font-bold mb-3">ben.dev</h1>
           <nav className="flex pb-3">{renderNavComponent}</nav>
         </div>
