@@ -4,7 +4,7 @@ export default function ProjectHighlight() {
   return (
     <div className="hero bg-base-200 mb-10">
       <div className="hero-content flex-col-reverse p-0 lg:flex-row-reverse">
-        <div className="flex overflow-x-auto snap-x touch-pan-x max-w-screen-sm w-[80vw] md:w-[50vw] lg:w-1/2 py-4 px-2">
+        <div className="flex overflow-x-auto snap-x touch-auto max-w-screen-sm w-[80vw] md:w-[50vw] lg:w-1/2 py-4 px-2">
           {new Array(undefined, undefined, undefined).map((item, key) => (
             <ProjectCard key={key} />
           ))}
