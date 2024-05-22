@@ -8,6 +8,10 @@ export interface HeaderPropTypes {
   navItems: NavType[];
 }
 
+export interface FooterPropTypes {
+  navItems: NavType[];
+}
+
 export interface ContactFormProps {
   canSendMail: boolean;
 }

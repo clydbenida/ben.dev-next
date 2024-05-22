@@ -1,6 +1,20 @@
-import Link from "next/link";
+"use client";
 
-export default function Footer() {
+import { FooterPropTypes } from "@/types";
+import Link from "next/link";
+import { useMemo } from "react";
+
+export default function Footer({ navItems }: FooterPropTypes) {
+  const renderNavItems = useMemo(
+    () =>
+      navItems?.map((item, idx) => (
+        <Link className="link link-hover" href={item.href} key={idx}>
+          {item.label}
+        </Link>
+      )),
+    [navItems],
+  );
+
   return (
     <footer className="p-10 bg-gray-50 flex flex-col md:flex-row mt-10">
       <aside>
@@ -8,18 +22,7 @@ export default function Footer() {
         <p>{/* Insert catchphrase here */}</p>
         <nav className="footer-links mb-10">
           <h6 className="footer-title">Pages</h6>
-          <Link href="/" className="link link-hover">
-            Homepage
-          </Link>
-          <Link href="/blogs" className="link link-hover">
-            Blogs
-          </Link>
-          <Link href="/projects" className="link link-hover">
-            Projects
-          </Link>
-          <Link href="contact" className="link link-hover">
-            Contact
-          </Link>
+          {renderNavItems}
         </nav>
       </aside>
       <nav className="flex-1 flex flex-row h-auto items-center md:justify-end">

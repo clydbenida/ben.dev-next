@@ -1,3 +1,4 @@
+import ProjectHighlight from "@/components/ProjectHighlight";
 import Image from "next/image";
 
 export default async function Home() {
@@ -23,10 +24,8 @@ export default async function Home() {
         </div>
       </div>
 
-      <p>
-        Currently, I’m exploring some technologies used for web development. My
-        main tool for frontend development is React.js.
-      </p>
+      <ProjectHighlight />
+
       <p>
         Outside of my work I love playing video games. At the moment, I am into
         story-driven video games. I also love cooking for my girlfriend and our
