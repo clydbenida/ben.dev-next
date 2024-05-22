@@ -54,6 +54,7 @@ export default function Header(props: HeaderPropTypes) {
           staggerChildren: 0.05,
         }}
         className="fixed z-10 w-[100%] bg-white ml-5 border-b mb-3"
+        whileHover={headerVariants.visible}
       >
         <div className="w-screen lg:w-[80vw] mx-auto mt-10">
           <h1 className="text-3xl font-bold mb-3">ben.dev</h1>
