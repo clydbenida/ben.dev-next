@@ -53,6 +53,7 @@ export default function Header(props: HeaderPropTypes) {
           duration: 0.6,
           staggerChildren: 0.05,
         }}
+        whileHover={headerVariants.visible}
         className="fixed z-10 w-[100%] bg-white border-b mb-3"
       >
         <div className="w-screen lg:w-[80vw] mx-auto mt-10">
