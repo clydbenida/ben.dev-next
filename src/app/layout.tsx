@@ -28,6 +28,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/icon/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className}>
         <Header navItems={navItems} />
         <main className="flex min-h-screen flex-col justify-between lg:px-24 md:w-[70vw] w-auto px-10 mx-auto">
