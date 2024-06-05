@@ -13,11 +13,9 @@ export default async function ProjectsPage() {
         Projects
       </h1>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+      <div>
         {projectEntries.items?.map((item: Record<string, any>, key: number) => (
-          <div key={key}>
-            <ProjectCard projectFields={item.fields} />
-          </div>
+          <ProjectCard projectFields={item.fields} key={key} />
         ))}
       </div>
     </div>
