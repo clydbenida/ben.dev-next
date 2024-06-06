@@ -6,19 +6,18 @@ export default async function ProjectsPage() {
     content_type: "project",
   });
 
-  console.log("Project Entries", projectEntries.items[0].fields)
-
   return (
-    <div className="mt-24">
+    <div className="mt-40">
       <h4 className="text-sm italic font-light">Projects</h4>
-      <h1 className="text-3xl font-bold">
-        Some projects that I have worked on
+      <h1 className="text-3xl font-bold mb-20">
+        Projects
       </h1>
-      <p>These are some of the side projects I worked on.</p>
 
-      <div>
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
         {projectEntries.items?.map((item: Record<string, any>, key: number) => (
-          <ProjectCard projectFields={item.fields} key={key} />
+          <div key={key}>
+            <ProjectCard projectFields={item.fields} />
+          </div>
         ))}
       </div>
     </div>
