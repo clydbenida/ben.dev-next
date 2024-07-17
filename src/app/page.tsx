@@ -40,6 +40,8 @@ export default async function Home() {
         Currently, I’m exploring some technologies used for web development. My
         main tool for fullstack development is React.js, Express.js, and MySQL.
       </p>
+      {/*<ProjectHighlight />*/}
+      <ProjectHighlight />
 
       <Section>
         <SectionTitle>Professional Work</SectionTitle>
