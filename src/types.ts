@@ -13,7 +13,7 @@ export interface ProjectEntryType {
   tags: string[];
 }
 
-export interface ProjectCardHighlightPropTypes {
+export interface ProjectHighlightCardProps {
   projectFields: ProjectEntryType;
 }
 
