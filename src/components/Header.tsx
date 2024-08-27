@@ -1,15 +1,22 @@
 "use client";
 
+import { useDeviceType } from "@/hooks/useDeviceType";
 import { HeaderPropTypes } from "@/types";
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { TfiMenu } from "react-icons/tfi";
 
 export default function Header(props: HeaderPropTypes) {
   const targetRef = useRef(null);
   const pathname = usePathname();
-  const [showHeader, setShowHeader] = useState(false);
+  const deviceType = useDeviceType();
+  const isDevicePC = deviceType === "pc";
+
+  const [showHeader, setShowHeader] = useState(!isDevicePC);
+
+  console.log(deviceType);
 
   const renderNavComponent = useMemo(
     () =>
@@ -17,23 +24,33 @@ export default function Header(props: HeaderPropTypes) {
         .sort((a, b) => a.sortOrder - b.sortOrder)
         .map((navItem, idx) => (
           <Link
-            className={`text-gray-400 ${pathname === navItem.href && "text-gray-900"} hover:text-gray-900 hover:bg-gray-50 rounded-lg p-2 pr-6`}
+            className={`text-gray-400 ${
+              pathname === navItem.href && "text-gray-900"
+            } hover:text-gray-900 hover:bg-gray-50 rounded-lg p-2 pr-6`}
             key={idx}
             href={navItem.href}
           >
             {navItem.label}
           </Link>
         )),
-    [props.navItems, pathname],
+    [props.navItems, pathname]
   );
 
   const { scrollY } = useScroll({});
 
-  useMotionValueEvent(scrollY, "change", (latest: number) => {
-    if (latest > 100) {
+  useEffect(() => {
+    if (!isDevicePC) {
       setShowHeader(true);
-    } else {
-      setShowHeader(false);
+    }
+  }, [isDevicePC]);
+
+  useMotionValueEvent(scrollY, "change", (latest: number) => {
+    if (isDevicePC) {
+      if (latest > 100) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+      }
     }
   });
 
@@ -56,9 +73,12 @@ export default function Header(props: HeaderPropTypes) {
         className="fixed z-10 w-[100%] bg-white ml-5 border-b mb-3"
         whileHover={headerVariants.visible}
       >
-        <div className="w-screen lg:w-[80vw] mx-auto mt-10">
-          <h1 className="text-3xl font-bold mb-3">ben.dev</h1>
-          <nav className="flex pb-3">{renderNavComponent}</nav>
+        <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:flex-col sm:items-start justify-between items-center flex-row w-[90vw] my-7 mx-auto">
+          <h1 className="text-3xl font-bold mb-3 w-fit">ben.dev</h1>
+          <nav className="hidden pb-3 sm:flex">{renderNavComponent}</nav>
+          <button className="sm:hidden border py-2 px-4 rounded-md w-fit ">
+            <TfiMenu color="#0f0f0f" size={25} />
+          </button>
         </div>
       </motion.header>
       <div ref={targetRef} className="absolute top-[100%]" />
