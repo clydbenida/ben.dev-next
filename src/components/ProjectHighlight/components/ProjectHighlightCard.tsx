@@ -7,7 +7,9 @@ export default function ProjectHighlightCard(props: ProjectHighlightCardProps) {
       <div className="card-body overflow-hidden">
         <div>
           {props.projectFields?.tags?.map((tag: string, key: number) => (
-            <span key={key} className="badge">{tag}</span>
+            <span key={key} className="badge">
+              {tag}
+            </span>
           ))}
         </div>
         <figure className="w-auto h-[100px] md:h-[150px] bg-gray-100">
@@ -23,10 +25,8 @@ export default function ProjectHighlightCard(props: ProjectHighlightCardProps) {
           </div>
         </figure>
         <h4 className="text-2xl font-bold">{props.projectFields?.title}</h4>
-        <p className="text-gray-400">
-          {props.projectFields?.projectSummary}
-        </p>
+        <p className="text-gray-400">{props.projectFields?.projectSummary}</p>
       </div>
     </div>
-  )
+  );
 }
