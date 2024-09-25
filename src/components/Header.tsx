@@ -15,8 +15,7 @@ export default function Header(props: HeaderPropTypes) {
   const isDevicePC = deviceType === "pc";
 
   const [showHeader, setShowHeader] = useState(!isDevicePC);
-
-  console.log(deviceType);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const renderNavComponent = useMemo(
     () =>
@@ -44,6 +43,10 @@ export default function Header(props: HeaderPropTypes) {
     }
   }, [isDevicePC]);
 
+  useEffect(() => {
+    setShowMobileMenu(false);
+  }, [pathname]);
+
   useMotionValueEvent(scrollY, "change", (latest: number) => {
     if (isDevicePC) {
       if (latest > 100) {
@@ -59,10 +62,20 @@ export default function Header(props: HeaderPropTypes) {
     hidden: { opacity: 0, x: -100 },
   };
 
+  const mobileMenuVariants = {
+    visible: {opacity: 1, y: 0, display: 'block'},
+    hidden: {opacity: 0, y: -1000, display: 'hidden'}
+  }
+
+  const handleMobileMenuClick = () => {
+    console.log('test click')
+    setShowMobileMenu(prev => !prev)
+  }
+
   return (
     <>
       <motion.header
-        initial={{ opacity: 0, x: -100 }}
+        initial={{ opacity: 0, x: -100, display: 'hidden' }}
         variants={headerVariants}
         animate={showHeader ? "visible" : "hidden"}
         transition={{
@@ -73,13 +86,25 @@ export default function Header(props: HeaderPropTypes) {
         whileHover={headerVariants.visible}
         className="fixed z-10 w-[100%] bg-white border-b mb-3"
       >
-        <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:flex-col sm:items-start justify-between items-center flex-row w-[90vw] my-7 mx-auto">
-          <h1 className="text-3xl font-bold mb-3 w-fit">ben.dev</h1>
+        <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:flex-col sm:items-start justify-between items-center flex-row w-[90vw] my-5 mx-auto">
+          <h1 className="text-3xl font-bold sm:mb-3 w-fit">ben.dev</h1>
           <nav className="hidden pb-3 sm:flex">{renderNavComponent}</nav>
-          <button className="sm:hidden border py-2 px-4 rounded-md w-fit ">
+          <button className="sm:hidden border py-2 px-4 rounded-md w-fit" onClick={handleMobileMenuClick}>
             <TfiMenu color="#0f0f0f" size={25} />
           </button>
         </div>
+        <motion.div 
+          initial={mobileMenuVariants.hidden} 
+          variants={mobileMenuVariants} 
+          animate={showMobileMenu ? "visible" : "hidden"} 
+          className="bg-gradient-to-b from-white from-90% absolute"  
+          transition={{
+            ease: [0.1, 0.25, 0.3, 1],
+            duration: 0.6,
+            staggerChildren: 0.05,
+          }}>
+          <div className="flex flex-col gap-6 w-screen h-screen">{renderNavComponent}</div>
+        </motion.div>
       </motion.header>
       <div ref={targetRef} className="absolute top-[100%]" />
     </>
