@@ -1,6 +1,8 @@
+import ProjectHighlight from "@/components/ProjectHighlight";
 import Hero from "@/components/Hero/Hero";
 import Section, { SectionContent, SectionTitle } from "@/components/Section";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -34,21 +36,24 @@ export default async function Home() {
         </div>
       </div>
 
-      <p>
-        Currently, I’m exploring some technologies used for web development. My
-        main tool for fullstack development is React.js, Express.js, and MySQL.
-      </p>
-
       <Section>
         <SectionTitle>Professional Work</SectionTitle>
-        <SectionContent>I have been working as a Software Engineer since 2022. Here are some projects that I want to highlight.</SectionContent>
+        <SectionContent>
+          I have been working as a Software Engineer since 2022.
+          My main tools for fullstack development are MySQL, Express.js, React.js, and Node.js.
+          I am mostly confident in building frontends for web applications, though I also enjoy exploring new challenges.
+          I am currently open to a part-time remote role if I'm fit for the role.
+        </SectionContent>
       </Section>
 
+      {/* <ProjectHighlight /> */}
+
       <div className="text-center">
-        <h3 className="text-xl font-semibold">Want to work together?</h3>
+        <h3 className="text-xl font-semibold">Interested to work with me?</h3>
         <p>
           Contact me and we can talk.
         </p>
+        <Link href="/contact" className="btn">Contact</Link>
       </div>
     </div>
   );
