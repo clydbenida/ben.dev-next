@@ -1,7 +1,6 @@
 import ProjectHighlight from "@/components/ProjectHighlight";
 import Hero from "@/components/Hero/Hero";
 import Section, { SectionContent, SectionTitle } from "@/components/Section";
-import ProjectHighlight from "@/components/ProjectHighlight";
 import Image from "next/image";
 
 export default async function Home() {
