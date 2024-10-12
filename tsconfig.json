@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Hero/components/VoxelDesk.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Hero/components/VoxelDesk.jsx", "src/components/Hero/Hero.jsx"],
   "exclude": ["node_modules"]
 }
