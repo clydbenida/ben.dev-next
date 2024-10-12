@@ -22,16 +22,21 @@ export default async function RootLayout({
     content_type: "mainPages",
   });
 
-  const navItems: NavType[] = entries.items.map((entry: any) => entry.fields);
+  const navItems: NavType[] = entries.items
+    .map((entry: any) => entry.fields)
+    .sort((a: NavType, b: NavType) => a.sortOrder - b.sortOrder);
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/icon/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className}>
         <Header navItems={navItems} />
-        <main className="flex min-h-screen flex-col justify-between lg:px-24 md:w-[70vw] w-auto px-10 mx-auto">
+        <main className="flex min-h-screen flex-col justify-between lg:px-24 md:w-[70vw] w-auto px-4 sm:px-10 mx-auto">
           <main className="flex-1 flex-basis">{children}</main>
         </main>
-        <Footer />
+        <Footer navItems={navItems} />
       </body>
     </html>
   );

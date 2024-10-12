@@ -1,6 +1,9 @@
 import UnderDev from "@/components/UnderDev";
-import Link from "next/link";
+import { contentfulClient } from "@/contentful";
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogEntries = await contentfulClient.getEntries({ content_type: "blogPost"});
+  console.log("Blog Entries", blogEntries.items)
+
   return <UnderDev />;
 }

@@ -13,3 +13,7 @@ a {
 .footer-links .link {
     margin-right: 1rem;
 }
+
+.card-body .badge {
+    margin-right: 0.5rem;
+}
