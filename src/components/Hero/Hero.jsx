@@ -7,6 +7,7 @@ import { useRef } from "react";
 
 export default function Hero() {
   const ref = useRef(null);
+
   return (
     <div className="w-auto max-w-[500px] relative mb-[-48px]">
       <Canvas
@@ -15,7 +16,9 @@ export default function Hero() {
         dpr={[1, 2]}
         camera={{ fov: 25, position: [25, 10, 50], zoom: 0.75 }}
         style={{
-          width: '300px',
+          maxWidth: '300px',
+          minWidth: '240px',
+          width: '70vw',
           height: '450px',
         }}
       >

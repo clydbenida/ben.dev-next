@@ -35,17 +35,18 @@ export default async function Home() {
         </div>
       </div>
 
-      <p>
+
+      <p className="text-justify">
         Currently, I’m exploring some technologies used for web development. My
         main tool for fullstack development is React.js, Express.js, and MySQL.
       </p>
-      {/*<ProjectHighlight />*/}
-      <ProjectHighlight />
 
       <Section>
         <SectionTitle>Professional Work</SectionTitle>
         <SectionContent>I have been working as a Software Engineer since 2022. Here are some projects that I want to highlight.</SectionContent>
       </Section>
+
+      <ProjectHighlight />
 
       <div className="text-center">
         <h3 className="text-xl font-semibold">Want to work together?</h3>
