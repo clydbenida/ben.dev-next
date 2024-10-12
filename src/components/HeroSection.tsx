@@ -14,7 +14,7 @@ export default function HeroSection() {
       "Talk is cheap. Show me the code. – Linus Torvalds",
       "The only way to do great work is to love what you do. – Steve Jobs",
       "This 3D model is modeled after my desk.",
-      "This callout will be used as notification in the future. 😉",
+      "This callout will be used as a notification in the future. 😉",
       "It’s not a bug; it’s an undocumented feature. – Anonymous Developer Wisdom"
     ]
     const rNum = Math.floor(Math.random() * 5);
