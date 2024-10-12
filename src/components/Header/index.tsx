@@ -35,7 +35,7 @@ export default function Header(props: HeaderPropTypes) {
   return (
     <>
       <AnimatedHeader>
-        <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:flex-col sm:items-start justify-between items-center flex-row w-[90vw] my-5 mx-auto">
+        <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:items-start justify-between items-center flex-row md:w-[760px] px-4 my-5 mx-auto">
           <h1 className="text-3xl font-bold sm:mb-3 w-fit">ben.dev</h1>
           <nav className="hidden pb-3 sm:flex">{renderNavComponent}</nav>
           <button className="sm:hidden border py-2 px-4 rounded-md w-fit" onClick={handleMobileMenuClick}>

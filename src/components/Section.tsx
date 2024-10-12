@@ -5,7 +5,7 @@ import { memo, PropsWithChildren } from "react";
 
 function Section ({children}: PropsWithChildren) {
   return (
-    <div className="py-6">{children}</div>
+    <div className="pb-6">{children}</div>
   )
 }
 

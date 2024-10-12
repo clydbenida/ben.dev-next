@@ -1,4 +1,5 @@
 import ProjectHighlight from "@/components/ProjectHighlight";
+import { IoIosSend } from "react-icons/io";
 import Hero from "@/components/Hero/Hero";
 import Section, { SectionContent, SectionTitle } from "@/components/Section";
 import Image from "next/image";
@@ -7,25 +8,28 @@ import Link from "next/link";
 export default async function Home() {
   return (
     <div className="mt-5">
-      <div className="hero min-h-[70vh] bg-base-200 pt-24">
+      <div className="hero bg-base-200 pt-24 mb-2">
         <div className="hero-content flex-col p-0 w-full">
           <Hero />
           <div className="text-justify w-full">
             <h1 className="font-medium py-4 text-center backdrop-blur-md bg-gray-200 rounded-lg mb-5">
-              Hi! I'm a web developer based in the Philippines.
+              Hi! This is a random quote.
             </h1>
-            <div className="flex flex-col justify-between items-center">
+            <div className="grid grid-cols-5 items-center">
               <Image 
                 src='/headshot-1.jpeg' 
                 alt="Test"
-                width={130} 
-                height={130} 
-                className="object-none object-center h-[125px] w-[125px] rounded-full border-2 mb-5 border-gray-400"  
+                width={125} 
+                height={125} 
+                className="object-none object-center h-[100px] w-[100px] rounded-full border-2 mb-5 border-gray-400"  
               />
-              <div className="text-center">
-                <h1 className="text-2xl sm:text-5xl font-bold">Benedict Clyd Benida</h1>
-                <p className="sm:mt-3">Fullstack Developer (Node.js, React.js)</p>
+              <div className="text-center sm:ml-2 sm:text-left col-span-3">
+                <h1 className="text-xl sm:text-2xl font-bold">Benedict Clyd Benida</h1>
+                <p className="text-sm  sm:text-md">Fullstack Developer (Node.js, React.js)</p>
               </div>
+              <Link href='/contact' className="justify-self-end bg-gray-200 py-2 px-4 rounded-lg">
+                <IoIosSend size={25} />
+              </Link>
             </div>
             {/* <p className="py-6">
               I am a motivated web developer based in the Philippines 🇵🇭.
