@@ -46,7 +46,7 @@ export default async function Home() {
         <SectionContent>I have been working as a Software Engineer since 2022. Here are some projects that I want to highlight.</SectionContent>
       </Section>
 
-      <ProjectHighlight />
+      {/* <ProjectHighlight /> */}
 
       <div className="text-center">
         <h3 className="text-xl font-semibold">Want to work together?</h3>
