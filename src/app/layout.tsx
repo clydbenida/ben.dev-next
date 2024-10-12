@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import Header from "../components/Header";
 import { contentfulClient } from "@/contentful";
 import { NavType } from "@/types";
 import Footer from "@/components/Footer";
@@ -33,7 +33,7 @@ export default async function RootLayout({
       </head>
       <body className={inter.className}>
         <Header navItems={navItems} />
-        <main className="flex min-h-screen flex-col justify-between lg:px-24 md:w-[70vw] w-auto px-4 sm:px-10 mx-auto">
+        <main className="flex flex-col justify-between min-h-screen lg:px-24 md:w-[70vw] lg:w-[733px] w-auto px-4 sm:px-10 mx-auto">
           <main className="flex-1 flex-basis">{children}</main>
         </main>
         <Footer navItems={navItems} />
