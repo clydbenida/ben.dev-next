@@ -12,6 +12,8 @@
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.8",
     "@contentful/rich-text-html-renderer": "^16.5.2",
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.8",
     "contentful": "^10.11.1",
     "framer-motion": "^11.2.4",
     "next": "14.2.3",
