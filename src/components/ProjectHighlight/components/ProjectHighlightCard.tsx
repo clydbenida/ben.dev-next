@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { ProjectHighlightCardProps } from "@/types";
+import { ProjectCardPropTypes } from "@/types";
 
-export default function ProjectHighlightCard(props: ProjectHighlightCardProps) {
+export default function ProjectHighlightCard(props: ProjectCardPropTypes) {
   return (
     <div className="card shadow-xl max-w-[30rem] h-[350px]">
       <div className="card-body overflow-hidden">
