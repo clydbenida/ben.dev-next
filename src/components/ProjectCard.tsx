@@ -1,7 +1,7 @@
-import { ProjectCardPropTypes } from "@/types";
+import { ProjectHighlightCardProps } from "@/types";
 import Image from "next/image";
 
-export default function ProjectCard(props: ProjectCardPropTypes) {
+export default function ProjectCard(props: ProjectHighlightCardProps) {
 
   return (
     <div className="snap-center card mx-5 shadow-xl max-w-auto min-w-[75vw] md:min-w-fit ">
