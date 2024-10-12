@@ -8,7 +8,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ show, renderNavComponent}: MobileMenuProps) {
   const mobileMenuVariants = {
     visible: {opacity: 1, y: 0, display: 'block'},
-    hidden: {opacity: 0, y: -1000, display: 'hidden'}
+    hidden: {opacity: 0, y: -1000, display: 'none'}
   }
 
   return (
