@@ -4,10 +4,9 @@ import { OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { VoxelDesk } from "./components/VoxelDesk";
 import { useRef } from "react";
-import type { OrbitControls as OrbitControlsImp } from "three-stdlib";
 
 export default function Hero() {
-  const ref = useRef<OrbitControlsImp>(null);
+  const ref = useRef(null);
   return (
     <div className="w-auto max-w-[500px] relative mb-[-48px]">
       <Canvas
@@ -20,7 +19,7 @@ export default function Hero() {
           height: '450px',
         }}
       >
-        <Stage preset="soft" intensity={0} environment="city">
+        <Stage controls={ref} preset="soft" intensity={0} environment="city">
           <directionalLight color={0x9cdbf6} intensity={5} />
           <meshStandardMaterial color="#fff" emissive={"#fff"} />
           <OrbitControls
