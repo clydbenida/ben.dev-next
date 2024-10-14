@@ -9,6 +9,7 @@ import { TfiMenu } from "react-icons/tfi";
 import HeaderLink from "./components/HeaderLink";
 import MobileMenu from "./components/MobileMenu";
 import AnimatedHeader from "./components/AnimatedHeader";
+import Link from "next/link";
 
 export default function Header(props: HeaderPropTypes) {
   const pathname = usePathname();
@@ -36,7 +37,7 @@ export default function Header(props: HeaderPropTypes) {
     <>
       <AnimatedHeader>
         <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:items-start justify-between items-center flex-row md:w-[760px] px-4 my-5 mx-auto">
-          <h1 className="text-3xl font-bold sm:mb-3 w-fit">ben.dev</h1>
+          <Link href='/' className="text-3xl font-bold sm:mb-3 w-fit text-black">ben.dev</Link>
           <nav className="hidden pb-3 sm:flex">{renderNavComponent}</nav>
           <button className="sm:hidden border py-2 px-4 rounded-md w-fit" onClick={handleMobileMenuClick}>
             <TfiMenu color="#0f0f0f" size={25} />
