@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 
 export default async function Home() {
   return (
-    <div className="mt-5">
+    <div className="lg:max-w-[733px] mx-auto">
       <HeroSection />
 
       <Section>

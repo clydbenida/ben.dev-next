@@ -22,7 +22,7 @@ export default function HeroSection() {
     setRandomCallout(randomStrings[rNum])
   }, [])
   return (
-    <div className="hero bg-base-200 pt-24 mb-2">
+    <div className="hero bg-base-200 mb-2">
     <div className="hero-content flex-col p-0 w-full">
       <Hero />
       <div className="text-justify w-full">

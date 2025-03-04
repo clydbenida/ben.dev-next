@@ -1,0 +1,53 @@
+:root {
+  --size-h1: 40px;
+  --size-h2: 30px;
+  --size-h3: 24px;
+  --size-h4: 20px;
+  --size-h5: 18px;
+  --size-h6: 16px;
+}
+
+.blog-markdown {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: var(--size-h1);
+  }
+  
+  h2 {
+    font-size: var(--size-h2);
+  }
+
+  h3 {
+    font-size: var(--size-h3);
+  }
+
+  h4 {
+    font-size: var(--size-h4);
+  }
+
+  h5 {
+    font-size: var(--size-h5);
+  }
+
+  h6 {
+    font-size: var(--size-h6);
+  }
+
+  pre {
+    code {
+      margin: 0 auto;
+      background-color: #efefef;
+      border-radius: 16px;
+      border: 1px solid #afafaf;
+      padding: 1rem 2rem;
+      display: block;
+      width: 80%;
+      overflow-x: scroll;
+      font-size: 14px;
+    }
+  }
+}
