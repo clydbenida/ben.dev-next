@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import { contentfulClient } from "@/contentful";
 import { NavType } from "@/types";
 import Footer from "@/components/Footer";
+import BaseContainer from "@/components/BaseContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,9 +34,11 @@ export default async function RootLayout({
       </head>
       <body className={inter.className}>
         <Header navItems={navItems} />
-        <main className="flex flex-col justify-between min-h-screen lg:px-24 md:w-[70vw] lg:w-[733px] w-auto px-4 sm:px-10 mx-auto">
+        { /* <main className="flex flex-col justify-between min-h-screen lg:px-24 md:w-[70vw] lg:w-[733px] w-auto px-4 sm:px-10 mx-auto"> */ }
+        <BaseContainer className="flex flex-col justify-between min-h-screen w-auto mx-auto">
           <main className="flex-1 flex-basis">{children}</main>
-        </main>
+        </BaseContainer>
+        { /* </main> */ }
         <Footer navItems={navItems} />
       </body>
     </html>
