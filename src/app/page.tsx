@@ -19,14 +19,6 @@ export default async function Home() {
       </Section>
 
       <WorkSection />
-
-      <div className="text-center">
-        <h3 className="text-xl font-semibold">Interested to work with me?</h3>
-        <p>
-          Contact me and we can talk.
-        </p>
-        <Link href="/contact" className="btn">Contact</Link>
-      </div>
     </div>
   );
 }
