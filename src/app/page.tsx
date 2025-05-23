@@ -10,7 +10,6 @@ export default async function Home() {
       <HeroSection />
 
       <Section>
-        <SectionTitle>Professional Work</SectionTitle>
         <SectionContent>
           I have been working as a Software Engineer since 2022.
           My main tools for fullstack development are MySQL, Express.js, React.js, and Node.js.

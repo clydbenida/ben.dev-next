@@ -17,7 +17,7 @@ export const SectionTitle = ({children, className, ...rest}: React.HTMLAttribute
 
 export const SectionContent = ({children, className, ...rest}: React.HTMLAttributes<HTMLParagraphElement>) => {
   return (
-    <p className={"text-justify " + className} {...rest}>{children}</p>
+    <p className={"text-justify text-sm " + className ?? ""} {...rest}>{children}</p>
   )
 }
 
