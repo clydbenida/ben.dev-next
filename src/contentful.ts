@@ -1,4 +1,4 @@
-const contentful = require("contentful");
+import * as contentful from "contentful";
 
 export const contentfulClient = contentful.createClient({
   accessToken: process.env.CONTENTFUL_DELIVERY_KEY!,

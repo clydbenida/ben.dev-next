@@ -1,3 +1,5 @@
+import { Entry, EntrySkeletonType } from "contentful";
+
 export interface NavType {
   label: string;
   href: string;
@@ -27,4 +29,8 @@ export interface FooterPropTypes {
 
 export interface ContactFormProps {
   canSendMail: boolean;
+}
+
+export interface WorkSectionProps {
+  workSections: Entry<EntrySkeletonType, undefined, string>[]
 }
