@@ -32,5 +32,14 @@ export interface ContactFormProps {
 }
 
 export interface WorkSectionProps {
-  workSections: Entry<EntrySkeletonType, undefined, string>[]
+  workSections: ContentfulEntry[]
 }
+
+export interface WorkSectionListItemProps {
+  idx: number
+  workExperience: ContentfulEntry
+  lastIndex: number
+}
+
+export type ContentfulEntry = Entry<EntrySkeletonType, undefined, string>
+
