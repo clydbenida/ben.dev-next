@@ -35,8 +35,9 @@ export default function Header(props: HeaderPropTypes) {
 
   return (
     <>
-      <AnimatedHeader>
-        <BaseContainer className="flex sm:items-start justify-between items-center flex-row my-5 mx-auto">
+      {/* <AnimatedHeader> */}
+      <div className="fixed z-10 w-[100%] bg-white border-b mb-3">
+        <BaseContainer className="flex justify-between items-center flex-row my-5 mx-auto">
           { /* <div className="flex sm:w-[80vw] sm:mt-10 sm:mb-0 sm:items-start justify-between items-center flex-row md:w-[760px] px-4 my-5 mx-auto"> */ }
             <h1 className="text-3xl font-bold w-fit">ben.dev</h1>
             <nav className="hidden sm:flex">{renderNavComponent}</nav>
@@ -46,7 +47,8 @@ export default function Header(props: HeaderPropTypes) {
           { /* </div> */ }
           </BaseContainer>
         <MobileMenu show={showMobileMenu} renderNavComponent={renderNavComponent} />
-      </AnimatedHeader>
+      </div>
+     {/* </AnimatedHeader> */}
     </>
   );
 }
